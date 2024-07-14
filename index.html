@@ -16,6 +16,7 @@
       }
     .navbar ul
     {
+      display: flex;
       list-style-type: none;
       background-color: #000000;
       font-size: 20px;
@@ -39,6 +40,21 @@
     .navbar li{
       float: left;
     }
+    @media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-items {
+        flex-direction: column;
+    }
+
+    .navbar-items li {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
   </style>
 <title>Page Title</title>
 </head>
