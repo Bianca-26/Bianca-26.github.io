@@ -45,6 +45,23 @@
     .navbar li{
         margin: 0 30px;
     }
+    .container{
+      display: flex;
+      justify-content: space-between;
+      padding: 20px; /*sau mai mult*/
+    }
+    .section{
+        background-color: #f4f4f4;
+        width: 30%;
+        height: 500px; /*sau mai mult*/
+        border: 1px solid;
+        border-color: #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /*umbra*/
+        padding: 20px;
+        box-sizing: border-box; 
+        overflow: auto; /*scrollbar daca e nevoie*/
+        word-wrap: break-word; /*potrivire in casuta*/
+    }
     @media (max-width: 600px) {
     .navbar {
         flex-direction: column;
@@ -60,9 +77,22 @@
        margin: 10 0px;
     }
       .navbar a {
-        padding: 5px; /* Adjusted padding for smaller screens */
-        margin: 2px 0; /* Adjusted margin for smaller screens */
+        padding: 5px;
+        margin: 2px 0; 
       }
+      .container {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .section {
+            width: 90%;
+            margin-bottom: 0px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
 }
   </style>
 <title>Page Title</title>
@@ -75,8 +105,19 @@
     <li><a href="">Cărți</a></li>
   </ul>
 </nav>
+  <div class="container">
+    <div class="section">
+      /*scris*/
+    </div>
+    <div class="section">
+      /*scris*/
+    </div>
+    <div class="section">
+      /*scris*/
+    </div>
+  </div>
   <main>
-  <h3>Buna!</h3>
+ 
   </main>
 
 
