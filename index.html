@@ -45,25 +45,12 @@
     .navbar li{
         margin: 0 30px;
     }
-    .container{
-      display: flex;
-      justify-content: space-between;
-      padding: 20px; /*sau mai mult*/
-      flex-direction: row;
-      align-items: center;
-    }
-    .section{
-        background-color: #f4f4f4;
-        width: 32%;
-        height: 500px; /*sau mai mult*/
-        border: 1px solid;
-        border-color: #ddd;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /*umbra*/
-        padding: 25px;
-        box-sizing: border-box; 
-        overflow: auto; /*scrollbar daca e nevoie*/
-        word-wrap: break-word; /*potrivire in casuta*/
-    }
+    <div style="width:275px;">
+     <div class="box" id="box1"></div>
+     <div class="box" id="box2"></div>
+     <div class="box" id="box4"></div>
+</div>
+   
     @media (max-width: 600px) {
     .navbar {
         flex-direction: column;
@@ -83,15 +70,6 @@
         padding: 5px;
         margin: 2px 0; 
       }
-      .container {
-            flex-direction: column;
-            align-items: center;
-        }
-        .section {
-            width: 100%;
-            margin-bottom: 3px;
-            margin: 3px;
-        }
 }
   </style>
 <title>Page Title</title>
@@ -104,19 +82,11 @@
     <li><a href="">Cărți</a></li>
   </ul>
 </nav>
-  <div class="container">
-    <div class="section">
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    </div>
-    <div class="section">
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-
-    </div>
-    <div class="section">
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-
-    </div>
-  </div>
+  <div style="width:275px;">
+     <div class="box" id="box1"></div>
+     <div class="box" id="box2"></div>
+     <div class="box" id="box4"></div>
+</div>
   <main>
  
   </main>
