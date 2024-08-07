@@ -50,6 +50,26 @@
     .navbar li{
         margin: 0 15px;
     }
+      .dropdown{
+      display: none;
+      position: absolute;
+      background-color: #000000;
+      min-width: 160px;
+      z-index: 1;
+    }
+    .dropdown a{
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdown a:hover{
+      background-color: #fff;
+      color: black;
+    }
+    .navbar li:hover .dropdown{
+      display: block;
+    }
      .fundal{
         display: flex;
         width: 100%;
@@ -159,11 +179,27 @@
 <title>Page Title</title>
 </head>
 <body >
+  <!--
 <nav class="navbar">
   <ul>
     <li><a href="index.html">Acasă</a></li>
     <li><a href="">Prezentare</a></li>
     <li><a href="">Cărți</a></li>
+    <li><a href="">Despre mine</a></li>
+  </ul>
+</nav>-->
+  <nav class="navbar">
+  <ul>
+    <li><a href="index.html">Acasă</a></li>
+    <li><a href="">Prezentare</a></li>
+    <li>
+      <a href="#">Cărți</a>
+      <div class="dropdown">
+        <a href="#">Ficțiune</a>
+        <a href="#">Non-Ficțiune</a>
+        <a href="#">Biografii</a>
+      </div>
+    </li>
     <li><a href="">Despre mine</a></li>
   </ul>
 </nav>
