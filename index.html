@@ -110,7 +110,20 @@
       <div class = "purple-bar"><span></span></div>
     </div>    
     </div>
-
+  <div id="quoteDisplay">
+    <!--Quotes-->
+  </div>
+  <button onclick="newQuote()">Genereaza alt citat</button>
+  <script>
+    var quotes = ['O încăpere fără cărți este ca un corp fără suflet. - M.T. Cicero', 'Cărțile sunt oglinzi: vezi in ele ceea ce ai deja înlăuntrul tău. - C.R. Zafon','Dacă nu-ți place să citești, înseamnă că nu ai găsit cartea potrivită. - J.K. Rowling', 
+                  'Un copil care citește, va fi un adult care găndește. - S. Salmina', 'Astăzi cititor, mâine lider. - M. Fuller', 'Știința de carte dezvoltă în oameni încrederea în sine. - F. Dostoevsky'];
+    var randomNumber = Math.floor(Math.random()*(quotes.length);//numar random intre 0 si marime vectorului
+    function newQuote()
+      {
+        var randomNumber = Math.floor(Math.random()*(quotes.length));//numar random intre 0 si marime vectorului
+        document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
+      }
+  </script>
   <main>
  
   </main>
