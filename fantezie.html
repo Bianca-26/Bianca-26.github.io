@@ -114,7 +114,89 @@
        display: block;
        text-decoration: none;
        }
-
+       .semilunii_dropdown{
+       display: none;
+       position: absolute;
+       max-width:220px;
+       z-index: 1;
+       background-color:#6c63a6;
+       }
+       .semilunii_dropdown a{
+       border: solid 1px;
+       padding: 2px 5px;
+       border-color: white;
+       display: block;
+       text-decoration: none;
+       }
+       .semilunii_dropdown a:hover{
+       background:#352f61;
+       color: white;
+       }
+       .sidebar li:hover .semilunii_dropdown{
+       display: block;
+       }
+       .shadow_dropdown{
+       display: none;
+       position: absolute;
+       background: #6c63a6;
+       z-index: 1;
+       max-width: 200px;
+       }
+       .shadow_dropdown a{
+       display: block;
+       padding: 12px 16px;
+       border: solid 1px;
+       border-color: white;
+       text-decoration: none;
+       }
+       .shadow_dropdown a:hover{
+       background:#352f61;
+       color: white;
+       }
+       .sidebar li:hover .shadow_dropdown{
+       display: block;
+       }
+       .corb_dropdown{
+       display: none;
+       position: absolute;
+       z-index: 1;
+       background: #6c63a6;
+       max-width: 220px;
+       }
+       .corb_dropdown a{
+       display: block;
+       padding: 12px 16px;
+       text-decoration: none;
+       border: solid 1px;
+       border-color: white;
+       }
+       .corb_dropdown a:hover{
+       background:#352f61;
+       color: white;
+       }
+       .sidebar li:hover .corb_dropdown{
+       display: block;
+       }
+       .potter_dropdown{
+       position: absolute;
+       z-index: 1;
+       display: none;
+       max-width: 200px;
+       background: #6c63a6;
+       }
+       .potter_dropdown a{
+       border: solid 1px;
+       border-color: white;
+       display: block;
+       padding: 10px 10px;
+       }
+       .potter_dropdown a:hover{
+       background: #352f61;
+       color: white;
+       }
+       .sidebar li:hover .potter_dropdown{
+       display: block;
+       }
   </style>
 <title>Page Title</title>
 </head>
@@ -150,16 +232,43 @@
       <ul>
         <li><a href="">
           <h3>Orașul Semilunii</h3>
-        </a></li>
+        </a>
+        <div class="semilunii_dropdown">
+        <a href=""><h3>CASA PĂMÂNTULUI și a SÂNGELUI</h3></a>
+        <a href=""><h3>CASA CERULUI și a AERULUI</h3></a>
+        <a href=""><h3>CASA FOCULUI și a UMBREI</h3></a>
+        </div>
+        </li>
          <li><a href="">
           <h3>Shadow and Bone</h3>
-        </a></li>
+        </a>
+        <div class="shadow_dropdown">
+        <a href=""><h3>Shadow and Bone</h3></a>
+        <a href=""><h3>Siege and Storm</h3></a>
+        <a href=""><h3>Ruin and Rising</h3></a>
+        </div>
+        </li>
          <li><a href="">
           <h3>Băiatul corb și fata spiriduș</h3>
-        </a></li>
+        </a>
+        <div class="corb_dropdown">
+         <a href=""><h3>Pădurea Spaimelor</h3></a>
+          <a href=""><h3>Munții Monștrilor</h3></a>
+        </div>
+        </li>
         <li><a href="">
           <h3>Harry Potter</h3>
-        </a></li>
+        </a>
+        <div class="potter_dropdown">
+        <a href=""><h3>Harry Potter și Piatra Filosofală</h3></a>
+        <a href=""><h3>Harry Potter și Camera Secretelor</h3></a>
+        <a href=""><h3>Harry Potter și Prizonierul din Azkaban</h3></a>
+        <a href=""><h3>Harry Potter și Pocalul de Foc</h3></a>
+        <a href=""><h3>Harry Potter și Ordinul Phoenix</h3></a>
+        <a href=""><h3>Harry Potter și Prințul Semisânge</h3></a>
+        <a href=""><h3>Harry Potter și Talismanele Morții</h3></a>
+        </div>
+        </li>
       </ul>
     </div>
 
