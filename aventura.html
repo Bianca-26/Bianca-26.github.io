@@ -107,13 +107,34 @@
      }
     	.wrapper .sidebar ul li:hover {
     	 background-color: #6c63a6;
-   	 color: #fff;
-	}
+   		 color: #fff;
+		}
        .wrapper .sidebar ul li a{
        color: #bdb8d7;
        display: block;
        text-decoration: none;
        }
+       .narnia_dropdown{
+       display: none;
+       z-index: 1;
+       background: #6c63a6;
+       position: absolute;
+       max-width: 200px;
+       }
+       .narnia_dropdown a{
+       display: block;
+       padding: 2px 3px;
+       border: solid 1px;
+       border-color: white;
+       }
+       .narnia_dropdown a:hover{
+       background:#352f61;
+       color: white;
+       }
+       .sidebar li:hover .narnia_dropdown{
+       display: block;
+       }
+       
 
   </style>
 <title>Page Title</title>
@@ -148,6 +169,19 @@
     <div class="sidebar">
       <h2>Bibliotecă</h2>
       <ul>
+      	 <li><a href="">
+          <h3>Cronicile din Narnia</h3>
+        </a>
+        <div class="narnia_dropdown">
+        <a href=""><h3>Nepotul Magicianului</h3></a>
+        <a href=""><h3>Leul, Vrăjitoarea și Dulapul</h3></a>
+        <a href=""><h3>Calul și băiatul</h3></a>
+        <a href=""><h3>Prințul Caspian</h3></a>
+        <a href=""><h3>Călătorie cu Zori de Zi</h3></a>
+        <a href=""><h3>Jilțul de argint</h3></a>
+        <a href=""><h3>Ultima bătălie</h3></a>
+        </div>
+        </li>
         <li><a href="">
           <h3>Aventurile lui Tom Sawyer</h3>
         </a></li>
@@ -157,9 +191,6 @@
                 <li><a href="">
           <h3>Bunicuța hoțomană</h3>
         </a></li>
-	      <li><a href="">
-          <h3>Cronicile din Narnia</h3>
-        </a></li>
         
       </ul>
     </div>
@@ -167,4 +198,3 @@
 
 </body>
 </html>
-
