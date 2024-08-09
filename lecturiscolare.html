@@ -135,6 +135,28 @@
        font-size: 18px;
        color: #555;
        }
+       .morometii_dropdown{
+       display: none;
+       position: absolute;
+       background-color: #6c63a6;
+       min-width: 160px;
+       z-index: 1;
+       }
+       .morometii_dropdown a{
+       padding: 12px 16px;
+       text-decoration: none;
+       display: block;
+       text-align: left;
+       border: solid 1px;
+       border-color: white;
+       }
+       .morometii_dropdown a:hover{
+       background-color: #352f61;
+       color: #fff;
+       }
+       .sidebar li:hover .morometii_dropdown{
+       display: block;
+       }
 
   </style>
 <title>Page Title</title>
@@ -183,7 +205,12 @@
         </a></li>
          <li><a href="">
           <h3>Moromeții</h3>
-        </a></li>
+        </a>
+        <div class="morometii_dropdown">
+        <a href=""><h3>Volumul I</h3></a>
+        <a href=""><h3>Volumul II</h3></a>
+        </div>
+        </li>
          <li><a href="">
           <h3>O scrisoare pierdută</h3>
         </a></li>
