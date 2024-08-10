@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body{
+      font-family: sans-serif;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    main{
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    h1{
+      text-align: center;
+      }
+      .navbar{
+      width: 100%;
+     position: fixed;
+     z-index: 1000;
+    }
+    .navbar ul
+    {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      background-color: #000000;
+      font-size: 20px;
+      top: 0;
+      overflow: hidden;
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      
+    }
+    .navbar a
+    {
+      color: white;
+      text-decoration: none;
+      padding: 20px;
+      display: block;
+      text-align: center;
+    }
+    .navbar a:hover{
+      background-color: #fff;
+      color: black;
+    }
+    .navbar li{
+        margin: 0 15px;
+    }
+      .dropdown{
+      display: none;
+      position: absolute;
+      background-color: #000000;
+      min-width: 160px;
+      z-index: 1;
+    }
+    .dropdown a{
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdown a:hover{
+      background-color: #fff;
+      color: black;
+    }
+    .navbar li:hover .dropdown{
+      display: block;
+    }
+    .sidebar{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      background: #f3f5f9;
+      top:50px;
+      overflow: auto;
+    }
+    .wrapper{
+      display: flex;
+      position: relative;
+    }
+    .wrapper .sidebar{
+      position: fixed;
+      width: 300px;
+      height: 100%;
+      background:#4b4276;
+      padding: 30px 0;
+    }
+    .wrapper .sidebar h2{
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    }
+     .wrapper .sidebar ul li{
+     padding: 10px;
+     border-bottom: 1px solid rgba(0,0,0, 0.5);
+     border-top: 1px solid rgba(225, 225, 225, 0.5);
+     list-style-type: none;
+     }
+    	.wrapper .sidebar ul li:hover {
+    	 background-color: #6c63a6;
+   	 color: #fff;
+	}
+       .wrapper .sidebar ul li a{
+       color: #bdb8d7;
+       display: block;
+       text-decoration: none;
+       }
+       .semilunii_dropdown{
+       display: none;
+       position: absolute;
+       max-width:220px;
+       z-index: 1;
+       background-color:#6c63a6;
+       }
+       .semilunii_dropdown a{
+       border: solid 1px;
+       padding: 2px 5px;
+       border-color: white;
+       display: block;
+       text-decoration: none;
+       }
+       .semilunii_dropdown a:hover{
+       background:#352f61;
+       color: white;
+       }
+       .sidebar li:hover .semilunii_dropdown{
+       display: block;
+       }
+       .shadow_dropdown{
+       display: none;
+       position: absolute;
+       background: #6c63a6;
+       z-index: 1;
+       max-width: 200px;
+       }
+       .shadow_dropdown a{
+       display: block;
+       padding: 5px 6px;
+       border: solid 1px;
+       border-color: white;
+       text-decoration: none;
+       }
+       .shadow_dropdown a:hover{
+       background:#352f61;
+       color: white;
+       }
+       .sidebar li:hover .shadow_dropdown{
+       display: block;
+       }
+       .corb_dropdown{
+       display: none;
+       position: absolute;
+       z-index: 1;
+       background: #6c63a6;
+       max-width: 220px;
+       }
+       .corb_dropdown a{
+       display: block;
+       padding: 5px 6px;
+       text-decoration: none;
+       border: solid 1px;
+       border-color: white;
+       }
+       .corb_dropdown a:hover{
+       background:#352f61;
+       color: white;
+       }
+       .sidebar li:hover .corb_dropdown{
+       display: block;
+       }
+       .potter_dropdown{
+       position: absolute;
+       z-index: 1;
+       display: none;
+       max-width: 220px;
+       background: #6c63a6;
+       
+       }
+       .potter_dropdown a{
+       border: solid 1px;
+       border-color: white;
+       display: block;
+       padding-left: 2px;
+       
+       }
+       .potter_dropdown a:hover{
+       background: #352f61;
+       color: white;
+       }
+       .sidebar li:hover .potter_dropdown{
+       display: block;
+       }
+       .content{
+       background:#ededed;
+       display: block;
+       padding: 20px;
+       top: 50px;
+       position: relative;
+       width: 65%;
+       height: 100%;
+       left: 350px;
+       margin-right: 30px;
+       border: solid 2px;
+       border-color: #a1a1a1;
+       }
+       .content p{
+       flex-direction: column;
+       word-wrap: break-word;
+       overflow: auto;
+       font-size: 18px;
+       color: #555;
+       margin-top: 50px;
+       margin-left: 30px;
+       margin-right: 30px;
+       }
+       .coperta{
+       margin-top: 30px;
+       width: 30%;
+       left: 50px;
+       position: absolute;
+       padding: 2px;
+       height: 300px;
+       }
+       .detalii{
+       width: 56%;
+       margin-left: 350px;
+       height: 300px;
+       padding: 2px;
+       margin-top: 30px;
+       }
+       .detalii .text{
+       font-size: 18px;
+       }
+	.coperta img{
+	 height: 300px;
+	 margin-left: 60px;
+	 position: absolute;
+	 object-fit: cover;
+	}
+
+  </style>
+<title>Page Title</title>
+</head>
+<body >
+  <!--
+<nav class="navbar">
+  <ul>
+    <li><a href="index.html">Acasă</a></li>
+    <li><a href="">Prezentare</a></li>
+    <li><a href="">Cărți</a></li>
+    <li><a href="">Despre mine</a></li>
+  </ul>
+</nav>-->
+  <nav class="navbar">
+  <ul>
+    <li><a href="index.html">Acasă</a></li>
+    <li><a href="prezentare.html">Prezentare</a></li>
+    <li>
+      <a href="#">Cărți</a>
+      <div class="dropdown">
+        <a href="fantezie.html">Fantezie</a>
+        <a href="aventura.html">Aventură</a>
+        <a href="detectiv.html">Detectiv</a>
+        <a href="lecturiscolare.html">Lecturi Școlare</a>
+      </div>
+    </li>
+    <li><a href="">Despre mine</a></li>
+  </ul>
+</nav>
+ <div class="wrapper">
+    <div class="sidebar">
+      <h2>Bibliotecă</h2>
+      <ul>
+      <li><a href="">
+          <h3>Harry Potter</h3>
+        </a>
+        <div class="potter_dropdown">
+        <a href="fantezie.html"><h3>HP și Piatra Filosofală</h3></a>
+        <a href="camera.html"><h3>HP și Camera Secretelor</h3></a>
+        <a href="prizonierul.html"><h3>HP și Prizonierul din Azkaban</h3></a>
+        <a href="pocalul.html"><h3>HP și Pocalul de Foc</h3></a>
+        <a href="ordinul.html"><h3>HP și Ordinul Phoenix</h3></a>
+        <a href="semisange.html"><h3>HP și Prințul Semisânge</h3></a>
+        <a href="talismanele.html"><h3>HP și Talismanele Morții</h3></a>
+        </div>
+        </li>
+        <li><a href="">
+          <h3>Orașul Semilunii</h3>
+        </a>
+        <div class="semilunii_dropdown">
+        <a href="pamant.html"><h3>CASA PĂMÂNTULUI și a SÂNGELUI</h3></a>
+        <a href="cer.html"><h3>CASA CERULUI și a AERULUI</h3></a>
+        <a href="foc.html"><h3>CASA FOCULUI și a UMBREI</h3></a>
+        </div>
+        </li>
+         <li><a href="">
+          <h3>Shadow and Bone</h3>
+        </a>
+        <div class="shadow_dropdown">
+        <a href="shadow.html"><h3>Shadow and Bone</h3></a>
+        <a href="siege.html"><h3>Siege and Storm</h3></a>
+        <a href="ruin.html"><h3>Ruin and Rising</h3></a>
+        </div>
+        </li>
+                 <li><a href="">
+          <h3>Băiatul corb și fata spiriduș</h3>
+        </a>
+        <div class="corb_dropdown">
+         <a href="padurea.html"><h3>Pădurea Spaimelor</h3></a>
+          <a href="muntii.html"><h3>Munții Monștrilor</h3></a>
+        </div>
+        </li>
+      </ul>
+    </div>
+    <div class = "content">
+    <div class="coperta"><img src=""></img></div>
+    <div class="detalii">
+    <div class="text">
+    <p style="color:black"><b>Titlu: </b><u> &nbsp&nbsp&nbsp&nbsp Pădurea Spaimelor&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</u></p>
+    <p style="color:black"><b>Autor: </b><u>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  Marcus Sedgwick&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</u></p>
+    <p style="color:black"><b>Data apariției: </b><u> &nbsp&nbsp&nbsp&nbsp 5 iulie 2012 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</u></p>
+    <p style="color:black"><b>Gen: </b><u> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Fantezie &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</u></p>
+    </div>
+    </div>
+    <p>BUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJ</p>
+    </div>
+   
+
+
+</body>
+</html>
