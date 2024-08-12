@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body{
+      font-family: sans-serif;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    main{
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    h1{
+      text-align: center;
+      }
+      .navbar{
+      width: 100%;
+     position: fixed;
+     z-index: 1000;
+    }
+    .navbar ul
+    {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      background-color: #000000;
+      font-size: 20px;
+      top: 0;
+      overflow: hidden;
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      
+    }
+    .navbar a
+    {
+      color: white;
+      text-decoration: none;
+      padding: 20px;
+      display: block;
+      text-align: center;
+    }
+    .navbar a:hover{
+      background-color: #fff;
+      color: black;
+    }
+    .navbar li{
+        margin: 0 15px;
+    }
+      .dropdown{
+      display: none;
+      position: absolute;
+      background-color: #000000;
+      min-width: 160px;
+      z-index: 1;
+    }
+    .dropdown a{
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdown a:hover{
+      background-color: #fff;
+      color: black;
+    }
+    .navbar li:hover .dropdown{
+      display: block;
+    }
+    .sidebar{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      background: #f3f5f9;
+      top:50px;
+      overflow: auto;
+    }
+    .wrapper{
+      display: flex;
+      position: relative;
+    }
+    .wrapper .sidebar{
+      position: fixed;
+      width: 300px;
+      height: 100%;
+      background:#4b4276;
+      padding: 30px 0;
+    }
+    .wrapper .sidebar h2{
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    }
+     .wrapper .sidebar ul li{
+     padding: 10px;
+     border-bottom: 1px solid rgba(0,0,0, 0.5);
+     border-top: 1px solid rgba(225, 225, 225, 0.5);
+     list-style-type: none;
+     }
+    	.wrapper .sidebar ul li:hover {
+    	 background-color: #6c63a6;
+   	 color: #fff;
+	}
+       .wrapper .sidebar ul li a{
+       color: #bdb8d7;
+       display: block;
+       text-decoration: none;
+       }
+      /* .holmes_dropdown{
+       display: none;
+       z-index: 1;
+       position: absolute;
+       background: #6c63a6;
+       max-width: 220px;
+       }
+       .holmes_dropdown a{
+       display: block;
+       border: solid 1px;
+       border-color: white;
+       padding: 1px 1px;
+       text-decoration: none;
+       }
+       .holmes_dropdown a:hover{
+       background: #352f61;
+       color: white;
+       }
+       .sidebar li:hover .holmes_dropdown{
+       display: block;
+       }*/
+        .holmes_dropdown{
+       display: none;
+       position: absolute;
+       background-color: #6c63a6;
+       max-width: 200px;
+       z-index: 1;
+       }
+       .holmes_dropdown a{
+       padding: 12px 16px;
+       text-decoration: none;
+       display: block;
+       text-align: left;
+       border: solid 1px;
+       border-color: white;
+       }
+       .holmes_dropdown a:hover{
+       background-color: #352f61;
+       color: #fff;
+       }
+       .sidebar li:hover .holmes_dropdown{
+       display: block;
+       }
+       .content{
+       background:#ededed;
+       display: block;
+       padding: 20px;
+       top: 50px;
+       position: relative;
+       width: 65%;
+       height: 100%;
+       left: 350px;
+       margin-right: 30px;
+       border: solid 2px;
+       border-color: #a1a1a1;
+       }
+       .content p{
+       flex-direction: column;
+       word-wrap: break-word;
+       overflow: auto;
+       font-size: 18px;
+       color: #555;
+       margin-top: 50px;
+       margin-left: 30px;
+       margin-right: 30px;
+       }
+       .coperta{
+       margin-top: 30px;
+       width: 30%;
+       left: 50px;
+       position: absolute;
+       padding: 2px;
+       height: 300px;
+       }
+       .detalii{
+       width: 56%;
+       margin-left: 350px;
+       height: 300px;
+       padding: 2px;
+       margin-top: 40px;
+       position: relative;
+       }
+        .detalii .text{
+        font-size: 18px;
+        }
+	.coperta img{
+	height: 300px;
+	margin-left: 60px;
+	position: absolute;
+	object-fit: cover;
+	}
+    /*
+        .titlu{
+        padding: 20px;
+        position: relative;
+        width: 50%;
+        height: 60px;
+        margin-top: 110px;
+        margin-right: 5px;
+        left: -265px;
+        }
+        .titlu p{
+        font-size: 18px;
+        display: block;
+        margin:0;
+        padding:0;
+        margin-top: 5px; 
+        
+        }*/
+        
+  </style>
+<title>Page Title</title>
+</head>
+<body >
+  <!--
+<nav class="navbar">
+  <ul>
+    <li><a href="index.html">Acasă</a></li>
+    <li><a href="">Prezentare</a></li>
+    <li><a href="">Cărți</a></li>
+    <li><a href="">Despre mine</a></li>
+  </ul>
+</nav>-->
+  <nav class="navbar">
+  <ul>
+    <li><a href="index.html">Acasă</a></li>
+    <li><a href="prezentare.html">Prezentare</a></li>
+    <li>
+      <a href="#">Cărți</a>
+      <div class="dropdown">
+        <a href="fantezie.html">Fantezie</a>
+        <a href="aventura.html">Aventură</a>
+        <a href="detectiv.html">Detectiv</a>
+        <a href="lecturiscolare.html">Lecturi Școlare</a>
+      </div>
+    </li>
+    <li><a href="">Despre mine</a></li>
+  </ul>
+</nav>
+ <div class="wrapper">
+    <div class="sidebar">
+      <h2>Bibliotecă</h2>
+      <ul>
+        <li><a href="">
+          <h3>Sherlock Holmes</h3>
+        </a>
+        <div class="holmes_dropdown">
+        <a href="detectiv.html">Studiu în roșu aprins, Semnul celor patru</a>
+        <a href="baskerville.html">Câinele din Baskerville, Valea terorii</a>
+        <a href="adventures.html">Aventurile lui Sherlock Holmes, Memoriile lui Sherlock Holmes</a>
+        <a href="return.html">Întoarcerea lui Sherlock Holmes</a>
+        <a href="lastbow.html">Ultima reverență</a>
+        <a href="arhiva.html">Arhiva lui Sherlock Holmes</a>
+        </div>
+        </li>
+      </ul>
+    </div>
+	<div class = "content">
+    <div class="coperta"><img src=""></img></div>
+    <div class="detalii">
+    <div class="text">
+    <p style="color:black"><b>Titlu: </b><u>Întoarcerea lui Sherlock Holmes</u></p>
+    <p style="color:black"><b>Autor: </b><u>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Sir Arthur Conan Doyle &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</u></p>
+    <p style="color:black"><b>Data apariției: </b><u> &nbsp&nbsp&nbsp 1905 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</u></p>
+    <p style="color:black"><b>Gen: </b><u> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Detectiv&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</u></p>
+    </div>
+    </div>
+    <p>BUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJJJJJJJJJJJJJJJJJJJJJJJJJJJDBUNASDJENEJNJNDJNDEJNDJENDJNDJNJ</p>
+    </div>
+   <!--
+    <div class="titlu">
+    <p style="color: black"><b>Titlu: </b><u>&nbsp &nbsp Aventurile lui Sherlock Holmes &nbsp&nbsp&nbsp&nbsp</u></p>
+    <p style="color:black">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <u>&nbsp&nbsp&nbsp&nbsp Memoriile lui Sherlock Holmes &nbsp&nbsp&nbsp</u></p>
+    </div>
+	-->
+
+</body>
+</html>
